@@ -1,0 +1,117 @@
+<?php
+
+$to      = 'antek.qc@gmail.com';
+$name    = $_POST['name'];
+$email   = $_POST['email'];
+$subject = 'Nowy e-mail od ' . $name . ' (' . $email . ')';
+$message = $_POST['message'];
+$platnosc = $_POST['platnosc']
+$headers = 'From: ' . $name . ' (' . $email . ')';
+$headers .= 'Content-Type: Zamowienie-GrafikiTanio; charset=utf-8';
+
+mail($to, $subject, $message, $headers, $platnosc);
+
+
+
+echo '<h1>Odpowiedź dostaniesz w swoim czasie na mailu który podałeś, cena do dyskusji.</h1>';
+
+?>
+
+<!DOCTYPE HTML>
+<html lang="pl">
+<head> 
+  <meta charset="utf-8" />
+  <title>GrafikiTanio</title>
+  <meta name="description" content="Chcesz graficzkę? Zamów już dziś!
+    Na start promocja -20% na każdą grafikę!" />
+  <meta name="keywords" content="grafiki, tanie grafiki" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  </head>
+
+  
+  <style>
+  #pojemnik
+  {
+    width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+  }
+  #StronaGłówna
+  {
+  float: left;
+  width: 145px;
+  min-height: 30px;
+  background-color: light-green;
+  }
+  #Onas
+  {
+  float: left;
+  width: 90px;
+  min-height: 30px;
+  }
+  #Galeria
+  {
+  float: left;
+  width: 99px;
+  min-height: 30px;
+  }
+  #ZlozZam
+  {
+  float: left;
+  width: 150px;
+  min-height: 30px;
+  }
+  
+  </style>
+  
+  <body>
+
+  <div id="pojemnik">
+  </div>
+  
+  <div id="StronaGłówna">
+  <a href="">Strona Główna</a>
+  </div>
+  
+  <div id="Onas">
+  <a href="Onas.html">O nas</a>
+  </div>
+  
+  <div id="Galeria">
+  <a href="Galeria.html">Galeria</a>
+  </div>
+  
+  <div id="ZlozZam">
+  <a href="ZlozZam.html">Złóż Zamówienie</a>
+  </div>
+  <br/><br/>
+								<h2 class="major">Kontakt</h2>
+								
+								
+								<form method="post" name="contactform" action="mail.php">
+									<div class="field half first">
+										<label for="name">Imię</label>
+										<input type="text" name="name" id="name" required/>
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" required/>
+									</div>
+									<div class="field">
+										<label for="message">Opisz co i jak</label>
+										<br/>
+										<textarea name="message" id="message" rows="4" required></textarea>
+									</div>
+								    <div class="field half">
+										<label for="platnosc">Forma płatności (Dostępne: )</label>
+										<input type="text" name="platnosc" id="platnosc" required/>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" name="submit" value="Wyślij" class="special" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+								
+
+</body>
+</html>
